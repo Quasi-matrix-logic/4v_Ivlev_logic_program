@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body >
+    <div class="header" id="header_id">
+        <p id="title" >
+            <p>IVLEV'S LOGIC. SEQUENCE AND TESTING OF THE TRUTH (GENERAL VALIDITY) OF FORMULAS</p>
+                </p>
+        
+    </div>
+    <div class="sidebar">
+                                                                    <!-- Общий контейнер для табов -->
+                                    <div class="tabs">
+
+                                       <!--  Контейнер с вкладками   -->
+                                       <ul class="tab-header">
+                                          <li class="tab-header__item js-tab-trigger active" data-tab="1">Patterns</li>
+                                          <li class="tab-header__item js-tab-trigger" data-tab="2">Axioms</li>
+                                          <li class="tab-header__item js-tab-trigger" data-tab="3">Inclusions</li>
+                                       </ul>
+
+                                       <!--  Контейнер с блоками, которые содержат контент вкладок   -->
+                                       <ul class="tab-content">
+                                          <li class="tab-content__item js-tab-content active" data-tab="1">
+                                                                                        <p> Chose length of patterns:   
+                                                                                            <select id="selector_length_id">
+                                                                                            <option value=2>2</option>
+                                                                                            <option selected value=3>3</option>
+                                                                                            <option value=4>4</option>
+                                                                                            <option value=5>5</option>
+                                                                                            <option value=6 >6</option>
+                                                                                            <!-- <option value = 8>7</option>
+                                                                                        <option value = 9>8</option> -->
+                                                                                        </select>
+                                                                                    </p>
+                                                                                    <p>Chose logic:
+                                                                                        <select id="selector_logic_id">
+                                                                                            <option value=Sa>Sa</option>
+                                                                                            <option value=Sb>Sb</option>
+                                                                                            <option value=Sc>Sc</option>
+                                                                                            <option value=Sd>Sd</option>
+                                                                                            <option value=Se>Se</option>
+                                                                                            <option value=Sf>Sf</option>
+                                                                                            <option value=Sg>Sg</option>
+                                                                                            <option selected value=Sh>Sh</option>
+                                                                                            <option value=Si>Si</option>
+                                                                                            
+                                                                                        </select>
+                                                                                    </p>
+                                                                                    <p>Choose implication, equivalence, or one-way implication:
+                                                                                        <select id="selector_type_of_formulas_id">
+                                                                                            <option value="impl">⇒</option>
+                                                                                            <option value="eq">⇔</option>
+                                                                                            <option value="oneside_impl">⤇</option>
+                                                                                        </select>
+                                                                                    </p>
+                                                                                    <p>Print false
+                                                                                    <input class="checkbox" type="checkbox" id="print_false_or_not_id"></p> 
+                                                                                    <p >Add program information
+                                                                                    <input class="checkbox" type="checkbox" id="information_id"></p>
+                                                                                    <p><input class="button" type="button" id="button2" onclick="START_function(0)" value="START"></p>
+                                          </li>
+                                          <li class="tab-content__item js-tab-content" data-tab="2">
+                                                                                    <p >Chose logic:
+                                                                                        <select id="selector_logic_test_id">
+                                                                                            <option value=Sa>Sa</option>
+                                                                                            <option value=Sb>Sb</option>
+                                                                                            <option value=Sc>Sc</option>
+                                                                                            <option value=Sd>Sd</option>
+                                                                                            <option value=Se>Se</option>
+                                                                                            <option value=Sf>Sf</option>
+                                                                                            <option value=Sg>Sg</option>
+                                                                                            <option selected value=Sh>Sh</option>
+                                                                                            <option value=Si>Si</option>
+                                                                                        </select>
+                                                                                        <select id="selector_sign_test_id">
+                                                                                            <option value=(+)>(+)</option>
+                                                                                            <option value=(0)>(0)</option>
+                                                                                            <option value=(-)>(-)</option>
+                                                                                        </select>
+                                                                                        </p>
+                                                                                    
+                                                                                    <p>Chose length of formulae:
+                                                                                        <select id="selector_length_test_id">
+                                                                                            <!-- <option value=2>2</option>
+                                                                                            <option selected value=3>3</option> -->
+                                                                                            <option value=4>4</option>
+                                                                                            <option value=5>5</option>
+                                                                                            <option value=6>6</option>
+                                                                                            <option value=7>7</option>
+                                                                                        <option value = 8>8</option> -->
+                                                                                        </select>
+                                                                                        </p>
+                                                                                    
+                                                                                    <p>Add program information
+                                                                                    <input class="checkbox" type="checkbox" id="information_test_id"></p>
+                                                                                    <!-- <p> add program information</p> -->
+                                                                                    <p><input class="button" type="button" id="button3" onclick="test_function()" value="TEST"></p>
+                                          </li>
+                                          <li class="tab-content__item js-tab-content" data-tab="3">
+                                                                                    <p>logic
+                                                                                        <select id="selector_logic_calc1_id">
+                                                                                            <option value=Sa>Sa</option>
+                                                                                            <option value=Sb>Sb</option>
+                                                                                            <option value=Sc>Sc</option>
+                                                                                            <option value=Sd>Sd</option>
+                                                                                            <option value=Se>Se</option>
+                                                                                            <option value=Sf>Sf</option>
+                                                                                            <option value=Sg>Sg</option>
+                                                                                            <option selected value=Sh>Sh</option>
+                                                                                            <option value=Si>Si</option>
+                                                                                        </select>
+                                                                                        inclused in
+                                                                                        
+                                                                                        <select id="selector_logic_calc2_id">
+                                                                                            <option value=Sa>G(Sa)</option>
+                                                                                            <option value=Sb>G(Sb)</option>
+                                                                                            <option value=Sc>G(Sc)</option>
+                                                                                            <option value=Sd>G(Sd)</option>
+                                                                                            <option value=Se>G(Se)</option>
+                                                                                            <option value=Sf>G(Sf)</option>
+                                                                                            <option value=Sg>G(Sg)</option>
+                                                                                            <option selected value=Sh>G(Sh)</option>
+                                                                                            <option value=Si>G(Si)</option>
+                                                                                        </select>
+                                                                                    </p>
+                                                                                
+                                                                                    <!-- <p><input class="checkbox" type="checkbox" id="information_calc_id"> add program information</p> -->
+                                                                                    <p>Add program information<input class="checkbox" type="checkbox" id="information_calc_id"></p>
+                                                                                    <input class="button" type="button" id="button4" onclick="START_function(1)" value="CALC">
+                                                                                    up to
+                                                                
+                                                                                    <select id="selector_length_calc_id">
+                                                                                            <option value=2>2</option>
+                                                                                            <option selected value=3>3</option>
+                                                                                            <option value=4>4</option>
+                                                                                            <option value=5>5</option>
+                                                                                    </select> 
+                                                                                    </p>                        
+                                          </li>
+                                       </ul>
+                                    </div>
+
+
+
+
+
+    </div>
+
+    <div class="main-panel"  id="s0">
+        <div  id="s1"><textarea class="field" id="text_div" readonly></textarea></div>
+        <div  id="s2">
+            <p>There are 9 Ivlev's logics, which are denoted as: Sa, Sc, Sb, Sd, Se, Sf, Sg, Sh, Si.  To run the program, you need to press START. The calculation results are displayed in
+            this text field and in the browser console. </p>
+            <p>The program will show a list of implications between modal patterns.
+            If you select "PRINT FALSE", you will also see false implications.
+            Attention. The program may freeze if you set a large pattern length.</p>
+            <p>The "Axioms" tab contains a list of all axioms of all Ivlev's logics. Click "CALC" to check their general validity in the selected semantics.</p><br>
+            <p>In the "Inclusions" tab, you can check inclusions between Ivlev logic graphs. More precisely, between graph fragments up to the selected pattern length value.</p>
+        </div>
+
+        <!-- <p class="main-panel">
+            There are 9 Ivlev's logics, which are denoted as: Sc, Sb, Sd, Se, Sf, Sg, Sh, Si, Sa</p>
+        <p>To run the program, you need to select the values and press START. The calculation results are displayed in
+            this text field and in the browser console.
+        </p>
+        <p><input class="button" type="button" id="button3" onclick="desciption()" value="Открыть описание">
+        <input class="button" type="button" id="button3" onclick="desciption()" value="How use this program?"></p> -->
+        <!-- <textarea class="field" id="text_div" readonly></textarea> -->
+        <!-- <textarea class="field" id="text_div1" readonly></textarea> -->
+    </div>
+
+    <script src="script.js" async></script>
+
+    <script>
+                                    var jsTriggers = document.querySelectorAll('.js-tab-trigger'),
+                                jsContents = document.querySelectorAll('.js-tab-content');
+
+                            jsTriggers.forEach(function(trigger) {
+                               trigger.addEventListener('click', function() {
+                                  var id = this.getAttribute('data-tab'),
+                                      content = document.querySelector('.js-tab-content[data-tab="'+id+'"]'),
+                                      activeTrigger = document.querySelector('.js-tab-trigger.active'),
+                                      activeContent = document.querySelector('.js-tab-content.active');
+
+                                  activeTrigger.classList.remove('active');
+                                  trigger.classList.add('active');
+
+                                  activeContent.classList.remove('active');
+                                  content.classList.add('active');
+                               });
+                            });
+
+
+    </script>
+
+    <footer class="footer" ></footer>
+
+</body>
+
+</html>
